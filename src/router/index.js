@@ -54,6 +54,18 @@ export const constantRoutes = [
       meta: { title: '首页', icon: 'dashboard' }
     }]
   },
+  
+  {
+    path: '/sales',
+    component: Layout,
+    redirect: '/sales/index',
+    children: [{
+      path: 'index',
+      name: 'SalesManage',
+      component: () => import('@/views/sales/index'),
+      meta: { title: '销售管理', icon: 'el-icon-goods' }
+    }]
+  },
 
   {
     path: '/example',
