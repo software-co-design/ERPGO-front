@@ -36,7 +36,7 @@ module.exports = [
       if (!token) {
         return {
           code: 60204,
-          message: 'Account and password are incorrect.'
+          message: '账号密码不正确'
         }
       }
 

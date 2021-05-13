@@ -51,20 +51,30 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: '首页', icon: 'dashboard' }
+      meta: { title: '我的首页', icon: 'dashboard' }
     }]
   },
-  
+
   {
     path: '/sales',
     component: Layout,
-    redirect: '/sales/index',
-    children: [{
-      path: 'index',
-      name: 'SalesManage',
-      component: () => import('@/views/sales/index'),
-      meta: { title: '销售管理', icon: 'el-icon-goods' }
-    }]
+    redirect: '/sales/orders',
+    name: 'Sales',
+    meta: { title: '销售管理', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'orders',
+        name: 'Orders',
+        component: () => import('@/views/sales/index'),
+        meta: { title: '销售订单', icon: 'el-icon-goods' }
+      },
+      {
+        path: 'shipping',
+        name: 'Shipping',
+        component: () => import('@/views/sales/index'),
+        meta: { title: '销售统计', icon: 'el-icon-goods' }
+      }
+    ]
   },
 
   {
