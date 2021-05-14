@@ -6,18 +6,18 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import PanelGroup from "./components/PanelGroup";
+import { mapGetters } from 'vuex'
+import PanelGroup from './components/PanelGroup'
 
 export default {
-  name: "Dashboard",
+  name: 'Dashboard',
   components: {
-    PanelGroup,
+    PanelGroup
   },
   computed: {
-    ...mapGetters(["name"]),
-  },
-};
+    ...mapGetters(['name'])
+  }
+}
 </script>
 
 <style lang="scss" scoped>
