@@ -56,28 +56,28 @@ export const constantRoutes = [
   },
   // 销售管理
   {
-    path: '/sales',
+    path: '/saleOrders',
     component: Layout,
-    redirect: '/sales/orders',
-    name: 'Sales',
+    redirect: '/saleOrders/orders',
+    name: 'SaleOrders',
     meta: { title: '销售管理', icon: 'el-icon-s-help' },
     children: [
       {
         path: 'orders',
         name: 'Orders',
-        component: () => import('@/views/sales/index'),
+        component: () => import('@/views/saleOrders/index'),
         meta: { title: '销售订单', icon: 'el-icon-goods' }
       },
       {
         path: 'shipping',
         name: 'Shipping',
-        component: () => import('@/views/sales/index'),
+        component: () => import('@/views/saleOrders/index'),
         meta: { title: '销售统计', icon: 'el-icon-goods' }
       },
       {
         path: 'clients',
         name: 'Clients',
-        component: () => import('@/views/sales/index'),
+        component: () => import('@/views/saleOrders/index'),
         meta: { title: '客户信息', icon: 'el-icon-goods' }
       }
     ]
@@ -93,13 +93,13 @@ export const constantRoutes = [
       {
         path: 'orders',
         name: 'Orders',
-        component: () => import('@/views/sales/index'),
+        component: () => import('@/views/saleOrders/index'),
         meta: { title: '入库订单', icon: 'el-icon-goods' }
       },
       {
         path: 'statistics',
         name: 'Statistics',
-        component: () => import('@/views/sales/index'),
+        component: () => import('@/views/saleOrders/index'),
         meta: { title: '入库统计', icon: 'el-icon-goods' }
       }
     ]
@@ -115,13 +115,13 @@ export const constantRoutes = [
       {
         path: 'orders',
         name: 'Orders',
-        component: () => import('@/views/sales/index'),
+        component: () => import('@/views/saleOrders/index'),
         meta: { title: '出库订单', icon: 'el-icon-goods' }
       },
       {
         path: 'statistics',
         name: 'Statistics',
-        component: () => import('@/views/sales/index'),
+        component: () => import('@/views/saleOrders/index'),
         meta: { title: '出库统计', icon: 'el-icon-goods' }
       }
     ]
@@ -137,19 +137,19 @@ export const constantRoutes = [
       {
         path: 'check',
         name: 'Check',
-        component: () => import('@/views/sales/index'),
+        component: () => import('@/views/saleOrders/index'),
         meta: { title: '销售对账', icon: 'el-icon-goods' }
       },
       {
         path: 'orders',
         name: 'Orders',
-        component: () => import('@/views/sales/index'),
+        component: () => import('@/views/saleOrders/index'),
         meta: { title: '历史订单', icon: 'el-icon-goods' }
       },
       {
         path: 'records',
         name: 'Records',
-        component: () => import('@/views/sales/index'),
+        component: () => import('@/views/saleOrders/index'),
         meta: { title: '转账记录', icon: 'el-icon-goods' }
       }
     ]
@@ -165,13 +165,13 @@ export const constantRoutes = [
       {
         path: 'info',
         name: 'Info',
-        component: () => import('@/views/sales/index'),
+        component: () => import('@/views/saleOrders/index'),
         meta: { title: '库存信息', icon: 'el-icon-goods' }
       },
       {
         path: 'monitor',
         name: 'Monitor',
-        component: () => import('@/views/sales/index'),
+        component: () => import('@/views/saleOrders/index'),
         meta: { title: '库存预警', icon: 'el-icon-goods' }
       }
     ]
@@ -188,7 +188,7 @@ export const constantRoutes = [
       {
         path: 'users',
         name: 'Users',
-        component: () => import('@/views/sales/index'),
+        component: () => import('@/views/saleOrders/index'),
         meta: { title: '用户管理', icon: 'el-icon-goods' }
       }
 
