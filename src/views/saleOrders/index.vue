@@ -2,8 +2,8 @@
   <div class="dashboard-container">
     <el-card style="height:80vh;">
       <div slot="header" class="clearfix">
-        <span class="dashboard-text">销售管理页面</span>
-        <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+        <span class="dashboard-text">销售订单管理</span>
+        <el-button style="float: right; padding: 3px 0" type="text">新增订单</el-button>
       </div>
       <el-table ref="multipleTable" :data="tableData" style="width: 100%" @selection-change="handleSelectionChange">
         <el-table-column type="selection" width="55" />
@@ -36,6 +36,16 @@ export default {
   data() {
     return {
       tableData: [
+        {
+          id: 'XSDD123456789',
+          clientName: '张三',
+          createDate: '2021-05-15',
+          goodsNum: 4,
+          totalMoney: 12500,
+          creator: '销售人员1',
+          operator: '销售经理1',
+          status: '未审核'
+        },
         {
           id: 'XSDD123456789',
           clientName: '张三',
