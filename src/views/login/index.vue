@@ -53,14 +53,17 @@
 </template>
 
 <script>
-import { validUsername } from '@/utils/validate'
+// import { validUsername } from '@/utils/validate'
 
 export default {
   name: 'Login',
   data() {
     const validateUsername = (rule, value, callback) => {
-      if (!validUsername(value)) {
-        callback(new Error('请输入正确的用户名'))
+      // if (!validUsername(value)) {
+      //   callback(new Error('请输入正确的用户名'))
+      // }
+      if (value.length < 5) {
+        callback(new Error('用户名不能小于5位字符'))
       } else {
         callback()
       }
@@ -111,6 +114,7 @@ export default {
           this.loading = true
           this.$store.dispatch('user/login', this.loginForm).then(() => {
             this.$router.push({ path: this.redirect || '/' })
+            // this.$router.push({ path: this.redirect || '/salesOrder' })
             this.loading = false
           }).catch(() => {
             this.loading = false
