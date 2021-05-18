@@ -71,7 +71,7 @@ export const constantRoutes = [
       {
         path: 'shipping',
         name: 'Shipping',
-        component: () => import('@/views/saleOrders/index'),
+        component: () => import('@/views/table/index'),
         meta: { title: '销售统计', icon: 'el-icon-goods' }
       },
       {
