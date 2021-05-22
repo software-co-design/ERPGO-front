@@ -38,7 +38,8 @@
             <!-- 对话框底部按钮 -->
             <div slot="footer" class="dialog-footer">
               <strong style="float:left;color:red;">注：订单通过审核后将无法修改，请仔细确认！！！</strong>
-              <el-button type="danger" :disabled="salesOrderInfo.status!='待审核'" @click="checkSuccess()">通过审核
+              <!-- :disabled="salesOrderInfo.status!='待审核'" -->
+              <el-button type="danger" @click="checkSuccess()">通过审核
               </el-button>
               <el-button type="warning" @click="checkFail">退回重申</el-button>
               <el-button type="primary" @click="dialogCheckOrder = false">确定</el-button>
