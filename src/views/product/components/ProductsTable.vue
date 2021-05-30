@@ -4,12 +4,12 @@
               style="width: 100%;height: 55vh;" @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55" />
       <el-table-column prop="id" label="产品编号" />
-      <el-table-column prop="clientName" label="产品名称" />
-      <el-table-column prop="createTime" label="产品规格" />
-      <el-table-column prop="totalMoney" label="锁定数量" />
-      <el-table-column prop="salesman" label="可用数量" />
-      <el-table-column prop="operator" label="总数量" />
-      <el-table-column prop="status" label="单位" />
+      <el-table-column prop="name" label="产品名称" />
+      <el-table-column prop="specification" label="产品规格" />
+      <el-table-column prop="lockedQuantity" label="锁定数量" />
+      <el-table-column prop="availableQuantity" label="可用数量" />
+      <el-table-column prop="totalQuantity" label="总数量" />
+      <el-table-column prop="unit" label="单位" />
       <!-- 操作列 -->
       <el-table-column label="操作">
         <template slot-scope="scope">
@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { listProudcts } from '@/api/product'
 export default {
   name: 'ProductsTable',
   data() {
@@ -36,10 +37,22 @@ export default {
   },
 
   created() {
-
+    this.getProductListByPage({
+      'pageNum': 1,
+      'pageSize': 5
+    })
   },
 
   methods: {
+    // 产品分页列表接口
+    getProductListByPage(pageObj) {
+      this.listLoading = true
+      listProudcts(pageObj).then(response => {
+        this.productList = response.data.records
+        this.listLoading = false
+      })
+    },
+
     updateProduct() {
 
     },
